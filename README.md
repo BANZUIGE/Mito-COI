@@ -12,7 +12,8 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
 * COI  
   A non-redundant reference database containing only COI-related sequences for eukaryotes.
 * 3xia.genus  
-  A characteristic database created with 57 common zooplankton genus recorded in the Three Gorges Reservoir area from historical records (not used in the article), for tutorials and testing. Smaller files are suitable for uploading to Github.
+  A characteristic database created with 57 common zooplankton genus recorded in the Three Gorges Reservoir area from historical records (not used in the article), for **tutorials** and **testing**.
+  Smaller files are suitable for uploading to Github.
 
 # Abbreviations used in this GitHub Repository and their meanings
 * mito/mitochondrial  
