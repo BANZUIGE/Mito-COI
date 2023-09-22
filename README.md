@@ -10,5 +10,18 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
 ## COI
 ## 3xia.genus
 
-# Tutorial on how to use and build a custom database
+# Abbreviations used in this document and their meanings
+* mito/mitochondrial
+* COI
+* 3xia.genus
+* Euka/Eu
+* acc
+* tax
+* taxid
+* .qza
+* ref
+* refseq
+* rmdup
+* lab
 
+# Tutorial on how to use and build a custom database
