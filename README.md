@@ -3,7 +3,7 @@ Mito-COI database
 
 This is a non-redundant database based on NCBI that contains all eukaryotic mitochondria and COI genes. It contains almost all mitochondrial sequences and COI sequences as of _**December 2021**_.
 
-# The database components contained in this document
+# The database components contained in this GitHub Repository
  See pdf for the composition of the Venn diagram: venn.pdf
 * Mito-COI
   A non-redundant reference database of all mitochondrial and COI sequences for eukaryotes.
@@ -12,7 +12,7 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
 * COI
   A non-redundant reference database containing only COI-related sequences for eukaryotes.
 * 3xia.genus
- A characteristic database created with more than 50 common genera recorded in the Three Gorges Reservoir area from historical records (not used in the article), for tutorials and testing. Smaller files are suitable for uploading to Github.
+  A characteristic database created with 57 common zooplankton genus recorded in the Three Gorges Reservoir area from historical records (not used in the article), for tutorials and testing. Smaller files are suitable for uploading to Github.
 
 # Abbreviations used in this document and their meanings
 * mito/mitochondrial
