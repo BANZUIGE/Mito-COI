@@ -5,10 +5,10 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
 
 # The database components contained in this document
  See pdf for the composition of the Venn diagram: venn.pdf
-## Mito-COI
-## Mitochondrial
-## COI
-## 3xia.genus
+* Mito-COI
+* Mitochondrial
+* COI
+* 3xia.genus
 
 # Abbreviations used in this document and their meanings
 * mito/mitochondrial
@@ -23,5 +23,6 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
 * refseq
 * rmdup
 * lab
+* fasta
 
 # Tutorial on how to use and build a custom database
