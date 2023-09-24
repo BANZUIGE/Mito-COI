@@ -1,5 +1,5 @@
 # 写在前面
-
+更全面的用法请参见：https://github.com/YongxinLiu/QIIME2ChineseManual
 # 1. 文件导入、导出、数据预处理
 
 - fasta格式文件
@@ -137,8 +137,9 @@ time qiime demux summarize \
 ```
 
 # 4. 数据过滤（OTU表过滤）
-```
+
 - Qiime1过滤Biom文件
+```
 # 按样品数据测序量过滤：选择counts>30000的样品
 filter_samples_from_otu_table.py -i otu_table.biom -o otu_table1.biom -n 30000
 # 查看过滤后结果：
@@ -149,8 +150,10 @@ filter_samples_from_otu_table.py -i otu_table.biom -o otu_table_no_high_coverage
 filter_otus_from_otu_table.py --min_count_fraction 0.00001 -i otu_table.biom -o otu_table1.biom
 # 按物种过滤OTU表：去除p__Chloroflexi菌门等 
 filter_taxa_from_otu_table.py -i otu_table3.biom -o otu_table4.biom -n p__Chloroflexi
+```
 
 - Qiime2过滤OTU_table
+```
 #过滤至少在2个样品中存在的Feature，去除偶然的Feature
 qiime feature-table filter-features --i-table table.qza --p-min-samples 2 --o-filtered-table sample-contingency-filtered-table.qza
 #过滤低丰度，< 5的特征被过滤掉
@@ -189,15 +192,16 @@ time qiime feature-classifier extract-reads --i-sequences 85_otus.qza \
 ```
 
 - 过滤参考序列与注释信息
+
 ```
 ## 仅保留细菌的代表序列命令
 qiime taxa filter-seqs 
 --i-sequences ref-seqs.qza  --i-taxonomy 99_otu_taxonomy.qza 
 --p-include Bacteria --o-filtered-sequences ref-seqs-Bacteria.qza
-```
+
 
 ## 仅保留细菌的注释信息命令
-```
+
 qiime rescript filter-taxa  --i-taxonomy 99_otu_taxonomy.qza 
 --m-ids-to-keep-file ref-seqs-Bacteria.qza --o-filtered-taxonomy ref-seqs-Bacteria-tax.qza
 ```
@@ -212,19 +216,25 @@ qiime feature-classifier fit-classifier-naive-bayes --i-reference-reads ref-seqs
 ```
   qiime feature-classifier classify-sklearn --i-classifier 3xia.genus.classifier.qza --i-reads filtered-rep-seqs.qza 
   --o-classification taxonomy.3xia.genus.qza --p-n-jobs 16                       #可设置线程数
+```
 选择合理算法进行注释
+```
 由于测序序列长度的限制，以及微生物种类的多样性，导致容易出现“一对多”（一条序列对应多个潜在物种注释结果）的现象，
 如果没有合理的注释方法，就会出现“选择困难症”。因此，在分析时，就需要对注释结果进行必要的取舍，既保证注释结果的可靠可信，
 又尽可能不损失物种注释的精度（保证尽可能还原物种的精细组成）。
 ```
-
+![image](https://github.com/BANZUIGE/Mito-COI/assets/95343596/34f1e7bd-c617-4505-a5d0-fba5efdab0f0)
 
 - 物种注释结果可视化
 ```
 qiime metadata tabulate --m-input-file taxonomy.qza --o-visualization taxonomy.qzv
-交互式条形图查看样本的分类组成（直接结果解压结果 barplot.qzv可得各分类水平数据）
+```
+- 交互式条形图查看样本的分类组成（直接结果解压结果 barplot.qzv可得各分类水平数据）
+```
 qiime taxa barplot --i-table table.qza --i-taxonomy taxonomy.qza --m-metadata-file sample-metadata.tsv  --o-visualization taxa-bar-plots.qzv
-（属）水平差异统计+可视化（3步）
+```
+- （属）水平差异统计+可视化（3步）
+```
 #1. 各分类（l1-l6）水平合并并统计
 qiime taxa collapse --i-table table-no-Cnidaria-unclassified.qza --i-taxonomy taxonomy.qza 
 --p-level 6 --o-collapsed-table table-no-Cnidaria-unclassified-genus.stat.qza
@@ -242,15 +252,15 @@ do
   qiime tools export --input-path $file --output-path $base
   biom convert --to-tsv -i $base/feature-table.biom -o $base.tsv
 done
-```
+
 
 #2. 格式化特征表，添加伪计数
-```
+
 qiime composition add-pseudocount --i-table genus.stat.qza --o-composition-table genus.stat.composition.qza 
-```
+
 
 #3. 计算差异属，指定分组类型   
-```
+
 qiime composition ancom \
   --i-table comp-gut-table-l6.qza --m-metadata-file sample-metadata.tsv \
 ```
@@ -332,10 +342,11 @@ time qiime diversity adonis \
 ```
 
 # 7. 纵向分析（时间序列，Beta多样性）
-```
+
 
 教程：https://github.com/BANZUIGE/QIIME2ChineseManual/tree/master/docs
 ----> QIIME 2教程. 07Cell帕金森小鼠Parkinson's Mouse(2021.2，最佳实战).md
+```
 ##绘制波动率图，输入元数据，非权重unifrac的pcoa结果，指定状态列为时间，个体列为小鼠，分组列为供体状态，默认数值来自第二轴，输出pc_vol.qzv
 time qiime longitudinal volatility \
   --m-metadata-file ./metadata.tsv \
@@ -359,7 +370,10 @@ infernal microbiomeutil muscle mothur r-vegan sourcetracker sortmerna sumaclust 
 #创建环境qiime1并安装qiime1
 conda create -n qiime1 python=2.7 qiime matplotlib=1.4.3 mock nose -c bioconda   
 print_qiime_config.py -t  #检查安装
-Classifier文件安装
+```
+- Classifier文件安装
+
+```
 rdp-classifier安装
 echo "export /home/data/gmb14/qiime/Zooplankton/qiime1/rdb/rdp_classifier_2.2/rdp_classifier-2.2.jar" >> ~/.bashrc
 ```
@@ -389,6 +403,8 @@ fungal:
 usearch -sintax ASVs.fa -db silva_18s_v123.fa   -tabbedout ASVs_tax_assignments.txt -strand both -sintax_cutoff 0.6
 ```
 
+![image](https://github.com/BANZUIGE/Mito-COI/assets/95343596/4975992e-49c1-490e-9e16-2c4b9c590a23)
+
 
 
 - 结合qiime2获取相对丰度
@@ -415,6 +431,9 @@ summarize_taxa.py -L 7 -i feture_taxa.biom -o sum_taxa
 ```
 # 9. Usearch11 用法
 # 10. 分析流程
+
+![image](https://github.com/BANZUIGE/Mito-COI/assets/95343596/358aa478-d323-4e58-9437-2f992e16548a)
+
 
 
 
