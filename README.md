@@ -4,7 +4,7 @@
 This is a non-redundant database based on NCBI that contains all eukaryotic mitochondria and COI genes. It contains almost all mitochondrial sequences and COI sequences as of _**December 2021**_.
 
 # The database components provided by this GitHub Repository
-  See pdf for the composition of the Venn diagram: venn.pdf(The number indicates the sequence number)
+  See pdf for the composition of the Venn diagram: venn.pdf (The number indicates the sequence number)
 * Mito-COI  
   A non-redundant reference database of all mitochondrial and COI sequences for eukaryotes.
 * Mitochondrial  
