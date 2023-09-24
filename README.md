@@ -44,4 +44,4 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
   fasta format file
 
 # Tutorial on how to use and build a custom database
-Please check out Folder **"TutorialOnHowToUseAndBuildACustomDatabase"** to learn how to use these databases we created and create your own unique database.
+Please visit Folder **"TutorialOnHowToUseAndBuildACustomDatabase"** to learn how to use these databases we created and create your own unique database.
