@@ -1,5 +1,5 @@
 # 写在前面
-更全面的用法请参见：https://github.com/YongxinLiu/QIIME2ChineseManual
+更全面的Qiime用法请参见：https://github.com/YongxinLiu/QIIME2ChineseManual
 # 1. 文件导入、导出、数据预处理
 
 - fasta格式文件
