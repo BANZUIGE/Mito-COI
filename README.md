@@ -31,7 +31,7 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
 * taxid  
   The classification number (ID) corresponding to each accession ID on NCBI
 * .qza  
-  qza files used for qiime2 analysis, including classification information files and reference sequence files
+  qza format  files used for qiime2 analysis, including classification information files and reference sequence files
 * ref  
   reference
 * refseq  
@@ -40,7 +40,7 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
   Remove duplicate sequences based on 100% sequence similarity
 * lab  
   Title corresponding to each sequence on NCBI
-* fasta  
+* .fasta  
   fasta format file
 
 # Tutorial on how to use and build a custom database
