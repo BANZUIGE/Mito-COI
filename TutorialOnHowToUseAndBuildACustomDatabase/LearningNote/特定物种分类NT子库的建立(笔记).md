@@ -64,7 +64,7 @@ taxonkit -j 20 lineage taxids.txt |taxonkit reformat -f "{k};{p};{c};{o};{f};{g}
 
 taxonkit lineage taxids.txt |taxonkit reformat -f "{k}\t{p}\t{c}\t{o}\t{f}\t{g}\t{s}" -F -P| csvtk cut -t -f -2
 | csvtk add-header -t -n taxid,kindom,phylum,class,order,family,genus,species  >lineage.txt6   #标准输出，并添加各分类单元表头，主要分隔符\t
-```
+```      
 
 ```
 #提取plant.taxid.txt对应的所有核酸序列的accession
