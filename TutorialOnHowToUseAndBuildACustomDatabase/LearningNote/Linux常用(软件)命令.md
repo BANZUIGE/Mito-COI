@@ -32,7 +32,39 @@ conda clean   #清空环境中的缓存
 把 ~/.condarc 中的 https 改成 http
 删除conda后重新下载一个
 ```
+- conda安装常用软件
+```
+##安装qiime1
+conda install biom-format
+conda install bioconductor-microbiome
+conda create -n qiime1 python=2.7 qiime matplotlib=1.4.3 mock nose -c bioconda
+##安装qiime2
+conda create -n qiime2 python=2.7 qiime matplotlib=1.4.3 mock nose -c bioconda
+##bioconda频道安装seqtk，seqkit，taxonkit
+conda install  -c bioconda seqtk seqkit taxonkit
+##其他频道安装软件
+conda install -c daler sratoolkit
+conda install -y -c hcc aspera-cli
+```
 
+- vim常用设置
+```
+set number      #设置行号
+
+## 永久设置行号  
+vim ~/.vimrc
+输入  set number   
+wq            #保存并退出
+source ~/.vimrc    #更新
+
+##设置查找高亮 
+```
+
+- rsync文件迁移
+```rsync -aP -e "ssh -p 8888" data.zip t03022@biotrainee.vip:/home/data/t0203/
+rsync -aP -r -e "ssh -p 8888" * t0203@biotrainee.vip:~/ncbi_db/taxonkit_test    ## -r带文件夹
+--exclude='*.txt'   排除某些目录或文件
+```
 - Wget -小技巧
 ```
 -c                     #断点下载
