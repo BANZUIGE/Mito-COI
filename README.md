@@ -25,7 +25,7 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
 * Euka/Eu  
   eukaryotic/eukaryotes
 * acc  
-  NCBI accession ID
+  NCBI accession ID, GenBank number
 * tax  
  taxonomy information
 * taxid  
