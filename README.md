@@ -46,3 +46,13 @@ This is a non-redundant database based on NCBI that contains all eukaryotic mito
 # Tutorial on how to use and build a custom database
 Please visit Folder **"TutorialOnHowToUseAndBuildACustomDatabase"** to learn how to use these databases we created, and create your own unique database.
 
+ ## Citation
+1）Hu, H., Wei, X.-Y., Liu, L., Wang, Y.-B., Jia, H.-J., Bu, L.-K. and Pei, D.-S. (2023) Supervised machine learning improves general applicability of eDNA metabarcoding for reservoir health monitoring. Water Research 246, 120686.
+doi:10.1016/j.watres.2023.120686
+2）Hu, H., Wei, X.-Y., Liu, L., Wang, Y.-B., Bu, L.-K., Jia, H.-J. and Pei, D.-S. (2024) Biogeographic patterns of meio- and micro-eukaryotic communities in dam-induced river-reservoir systems. Applied Microbiology and Biotechnology 108(1), 1-17.
+doi:10.1007/s00253-023-12993-4
+# Email
+## Email
+huhuan@cigit.ac.cn
+
+
